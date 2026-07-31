@@ -1,8 +1,12 @@
 # GearFlow — Frontend
 
-Frontend **simples** para o time testar o backend `gearflow-app` com telas e fluxos reais (em vez de
-Scalar/Postman). Cobre 100% dos endpoints: auth, clientes/veículos, catálogo, estoque e o ciclo de
-vida completo da Ordem de Serviço.
+Frontend **simples** para o time testar o backend [`gearflow-app`](https://github.com/Gearflow-Fiap/gearflow-app)
+com telas e fluxos reais (em vez de Scalar/Postman). Cobre 100% dos endpoints: auth, clientes/veículos,
+catálogo, estoque e o ciclo de vida completo da Ordem de Serviço.
+
+> **Backend:** [Gearflow-Fiap/gearflow-app](https://github.com/Gearflow-Fiap/gearflow-app) — este
+> frontend consome a API dele; os contratos em `src/api/generated` são gerados via **Orval** a partir
+> do OpenAPI do backend.
 
 ## Stack
 
