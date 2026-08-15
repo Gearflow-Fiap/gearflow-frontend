@@ -90,6 +90,29 @@
       }
     },
     "/api/workshop/budgets/{id}/approve": {
+      "get": {
+        "tags": [
+          "Workshop"
+        ],
+        "summary": "Aprova o orçamento via link (cliente).",
+        "description": "Aprova o orçamento e reserva o estoque; devolve uma página HTML de confirmação (usado no link do e-mail).",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "put": {
         "tags": [
           "Workshop"
@@ -121,6 +144,29 @@
       }
     },
     "/api/workshop/budgets/{id}/reject": {
+      "get": {
+        "tags": [
+          "Workshop"
+        ],
+        "summary": "Rejeita o orçamento via link (cliente).",
+        "description": "Rejeita o orçamento e cancela a OS; devolve uma página HTML de confirmação (usado no link do e-mail).",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "put": {
         "tags": [
           "Workshop"

@@ -262,6 +262,100 @@ export function useGetApiWorkshopBudgetsId<TData = Awaited<ReturnType<typeof get
 
 
 /**
+ * Aprova o orçamento e reserva o estoque; devolve uma página HTML de confirmação (usado no link do e-mail).
+ * @summary Aprova o orçamento via link (cliente).
+ */
+export const getApiWorkshopBudgetsIdApprove = (
+    id: string,
+ options?: SecondParameter<typeof customInstance>,signal?: AbortSignal
+) => {
+      
+      
+      return customInstance<void>(
+      {url: `/api/workshop/budgets/${id}/approve`, method: 'GET', signal
+    },
+      options);
+    }
+  
+
+
+
+export const getGetApiWorkshopBudgetsIdApproveQueryKey = (id?: string,) => {
+    return [
+    `/api/workshop/budgets/${id}/approve`
+    ] as const;
+    }
+
+    
+export const getGetApiWorkshopBudgetsIdApproveQueryOptions = <TData = Awaited<ReturnType<typeof getApiWorkshopBudgetsIdApprove>>, TError = unknown>(id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiWorkshopBudgetsIdApprove>>, TError, TData>>, request?: SecondParameter<typeof customInstance>}
+) => {
+
+const {query: queryOptions, request: requestOptions} = options ?? {};
+
+  const queryKey =  queryOptions?.queryKey ?? getGetApiWorkshopBudgetsIdApproveQueryKey(id);
+
+  
+
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof getApiWorkshopBudgetsIdApprove>>> = ({ signal }) => getApiWorkshopBudgetsIdApprove(id, requestOptions, signal);
+
+      
+
+      
+
+   return  { queryKey, queryFn, enabled: !!(id), ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getApiWorkshopBudgetsIdApprove>>, TError, TData> & { queryKey: DataTag<QueryKey, TData> }
+}
+
+export type GetApiWorkshopBudgetsIdApproveQueryResult = NonNullable<Awaited<ReturnType<typeof getApiWorkshopBudgetsIdApprove>>>
+export type GetApiWorkshopBudgetsIdApproveQueryError = unknown
+
+
+export function useGetApiWorkshopBudgetsIdApprove<TData = Awaited<ReturnType<typeof getApiWorkshopBudgetsIdApprove>>, TError = unknown>(
+ id: string, options: { query:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiWorkshopBudgetsIdApprove>>, TError, TData>> & Pick<
+        DefinedInitialDataOptions<
+          Awaited<ReturnType<typeof getApiWorkshopBudgetsIdApprove>>,
+          TError,
+          Awaited<ReturnType<typeof getApiWorkshopBudgetsIdApprove>>
+        > , 'initialData'
+      >, request?: SecondParameter<typeof customInstance>}
+ , queryClient?: QueryClient
+  ):  DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData> }
+export function useGetApiWorkshopBudgetsIdApprove<TData = Awaited<ReturnType<typeof getApiWorkshopBudgetsIdApprove>>, TError = unknown>(
+ id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiWorkshopBudgetsIdApprove>>, TError, TData>> & Pick<
+        UndefinedInitialDataOptions<
+          Awaited<ReturnType<typeof getApiWorkshopBudgetsIdApprove>>,
+          TError,
+          Awaited<ReturnType<typeof getApiWorkshopBudgetsIdApprove>>
+        > , 'initialData'
+      >, request?: SecondParameter<typeof customInstance>}
+ , queryClient?: QueryClient
+  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData> }
+export function useGetApiWorkshopBudgetsIdApprove<TData = Awaited<ReturnType<typeof getApiWorkshopBudgetsIdApprove>>, TError = unknown>(
+ id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiWorkshopBudgetsIdApprove>>, TError, TData>>, request?: SecondParameter<typeof customInstance>}
+ , queryClient?: QueryClient
+  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData> }
+/**
+ * @summary Aprova o orçamento via link (cliente).
+ */
+
+export function useGetApiWorkshopBudgetsIdApprove<TData = Awaited<ReturnType<typeof getApiWorkshopBudgetsIdApprove>>, TError = unknown>(
+ id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiWorkshopBudgetsIdApprove>>, TError, TData>>, request?: SecondParameter<typeof customInstance>}
+ , queryClient?: QueryClient 
+ ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData> } {
+
+  const queryOptions = getGetApiWorkshopBudgetsIdApproveQueryOptions(id,options)
+
+  const query = useQuery(queryOptions, queryClient) as  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData> };
+
+  query.queryKey = queryOptions.queryKey ;
+
+  return query;
+}
+
+
+
+
+
+/**
  * Aprova o orçamento e reserva o estoque; move a OS para execução ou aguardando peças.
  * @summary Aprova o orçamento (cliente).
  */
@@ -324,6 +418,100 @@ export const usePutApiWorkshopBudgetsIdApprove = <TError = void,
       return useMutation(mutationOptions, queryClient);
     }
     
+/**
+ * Rejeita o orçamento e cancela a OS; devolve uma página HTML de confirmação (usado no link do e-mail).
+ * @summary Rejeita o orçamento via link (cliente).
+ */
+export const getApiWorkshopBudgetsIdReject = (
+    id: string,
+ options?: SecondParameter<typeof customInstance>,signal?: AbortSignal
+) => {
+      
+      
+      return customInstance<void>(
+      {url: `/api/workshop/budgets/${id}/reject`, method: 'GET', signal
+    },
+      options);
+    }
+  
+
+
+
+export const getGetApiWorkshopBudgetsIdRejectQueryKey = (id?: string,) => {
+    return [
+    `/api/workshop/budgets/${id}/reject`
+    ] as const;
+    }
+
+    
+export const getGetApiWorkshopBudgetsIdRejectQueryOptions = <TData = Awaited<ReturnType<typeof getApiWorkshopBudgetsIdReject>>, TError = unknown>(id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiWorkshopBudgetsIdReject>>, TError, TData>>, request?: SecondParameter<typeof customInstance>}
+) => {
+
+const {query: queryOptions, request: requestOptions} = options ?? {};
+
+  const queryKey =  queryOptions?.queryKey ?? getGetApiWorkshopBudgetsIdRejectQueryKey(id);
+
+  
+
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof getApiWorkshopBudgetsIdReject>>> = ({ signal }) => getApiWorkshopBudgetsIdReject(id, requestOptions, signal);
+
+      
+
+      
+
+   return  { queryKey, queryFn, enabled: !!(id), ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getApiWorkshopBudgetsIdReject>>, TError, TData> & { queryKey: DataTag<QueryKey, TData> }
+}
+
+export type GetApiWorkshopBudgetsIdRejectQueryResult = NonNullable<Awaited<ReturnType<typeof getApiWorkshopBudgetsIdReject>>>
+export type GetApiWorkshopBudgetsIdRejectQueryError = unknown
+
+
+export function useGetApiWorkshopBudgetsIdReject<TData = Awaited<ReturnType<typeof getApiWorkshopBudgetsIdReject>>, TError = unknown>(
+ id: string, options: { query:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiWorkshopBudgetsIdReject>>, TError, TData>> & Pick<
+        DefinedInitialDataOptions<
+          Awaited<ReturnType<typeof getApiWorkshopBudgetsIdReject>>,
+          TError,
+          Awaited<ReturnType<typeof getApiWorkshopBudgetsIdReject>>
+        > , 'initialData'
+      >, request?: SecondParameter<typeof customInstance>}
+ , queryClient?: QueryClient
+  ):  DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData> }
+export function useGetApiWorkshopBudgetsIdReject<TData = Awaited<ReturnType<typeof getApiWorkshopBudgetsIdReject>>, TError = unknown>(
+ id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiWorkshopBudgetsIdReject>>, TError, TData>> & Pick<
+        UndefinedInitialDataOptions<
+          Awaited<ReturnType<typeof getApiWorkshopBudgetsIdReject>>,
+          TError,
+          Awaited<ReturnType<typeof getApiWorkshopBudgetsIdReject>>
+        > , 'initialData'
+      >, request?: SecondParameter<typeof customInstance>}
+ , queryClient?: QueryClient
+  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData> }
+export function useGetApiWorkshopBudgetsIdReject<TData = Awaited<ReturnType<typeof getApiWorkshopBudgetsIdReject>>, TError = unknown>(
+ id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiWorkshopBudgetsIdReject>>, TError, TData>>, request?: SecondParameter<typeof customInstance>}
+ , queryClient?: QueryClient
+  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData> }
+/**
+ * @summary Rejeita o orçamento via link (cliente).
+ */
+
+export function useGetApiWorkshopBudgetsIdReject<TData = Awaited<ReturnType<typeof getApiWorkshopBudgetsIdReject>>, TError = unknown>(
+ id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiWorkshopBudgetsIdReject>>, TError, TData>>, request?: SecondParameter<typeof customInstance>}
+ , queryClient?: QueryClient 
+ ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData> } {
+
+  const queryOptions = getGetApiWorkshopBudgetsIdRejectQueryOptions(id,options)
+
+  const query = useQuery(queryOptions, queryClient) as  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData> };
+
+  query.queryKey = queryOptions.queryKey ;
+
+  return query;
+}
+
+
+
+
+
 /**
  * Rejeita o orçamento e cancela a OS.
  * @summary Rejeita o orçamento (cliente).
